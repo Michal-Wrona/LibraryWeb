@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using LibraryWeb.Core.Persons;
 
 namespace LibraryWeb
 {
@@ -30,6 +31,7 @@ namespace LibraryWeb
         {
             services.AddControllers();
             services.AddDbContext<LibraryWebDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("LibraryWeb")));
+            services.AddSingleton<IPersonRepository, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
