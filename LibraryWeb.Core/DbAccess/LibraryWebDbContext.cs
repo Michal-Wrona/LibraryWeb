@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LibraryWeb.Core.Persons;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,5 +11,6 @@ namespace LibraryWeb.Core.DbAccess
     {
         public LibraryWebDbContext(DbContextOptions options) : base(options) 
         { }
+        public DbSet<Person> Persons { get; set; }
     }
 }
