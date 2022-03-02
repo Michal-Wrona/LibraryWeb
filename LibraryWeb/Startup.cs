@@ -31,7 +31,7 @@ namespace LibraryWeb
         {
             services.AddControllers();
             services.AddDbContext<LibraryWebDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("LibraryWeb")));
-            services.AddSingleton<IPersonRepository, PersonRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddSwaggerGen();
         }
 
