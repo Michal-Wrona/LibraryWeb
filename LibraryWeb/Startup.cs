@@ -32,6 +32,7 @@ namespace LibraryWeb
             services.AddControllers();
             services.AddDbContext<LibraryWebDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("LibraryWeb")));
             services.AddSingleton<IPersonRepository, PersonRepository>();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +42,8 @@ namespace LibraryWeb
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 
