@@ -11,5 +11,6 @@ namespace LibraryWeb.Core.Persons
         IEnumerable<Person> GetPersons();
 
         void AddPerson(Person person);
+        void DeletePerson(int id);
     }
 }

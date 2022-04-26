@@ -1,4 +1,5 @@
-﻿using LibraryWeb.Core.Books.Authors;
+﻿using LibraryWeb.Core.Books;
+using LibraryWeb.Core.Books.Authors;
 using LibraryWeb.Core.Persons;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,5 +16,10 @@ namespace LibraryWeb.Core.DbAccess
         public DbSet<Person> Persons { get; set; }
 
         public DbSet<Author> Authors { get; set; }
+
+        public DbSet<Book> Books { get; set; }
     }
 }
+
+
+

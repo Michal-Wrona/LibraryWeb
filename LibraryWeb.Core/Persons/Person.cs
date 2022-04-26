@@ -20,5 +20,7 @@ namespace LibraryWeb.Core.Persons
         public bool IsAccountLocked { get; set; }
 
         public ICollection<BookBorrowing> BookBorrowings { get; set; }
+
+       
     }
 }

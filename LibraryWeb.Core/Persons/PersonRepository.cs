@@ -31,5 +31,12 @@ namespace LibraryWeb.Core.Persons
         {
             return _dbContext.Persons.ToList();
         }
+
+        public void DeletePerson(int id)
+        {
+            var person = _dbContext.Persons.SingleOrDefault(x => x.Id == id);
+            _dbContext.Persons.Remove(person);
+            _dbContext.SaveChanges();
+        }
     }
 }

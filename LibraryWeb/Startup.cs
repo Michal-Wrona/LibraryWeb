@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using LibraryWeb.Core.Persons;
 using LibraryWeb.Core.Books.Authors;
-
+using LibraryWeb.Core.Books;
 
 namespace LibraryWeb
 {
@@ -35,6 +35,7 @@ namespace LibraryWeb
             services.AddDbContext<LibraryWebDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("LibraryWeb")));
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
             services.AddSwaggerGen();
         }
 
